@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Login here</title>
+<title>signup here</title>
 </head>
 <body>
-<h2>Login here</he>
+<h2>Signup here</he>
 <span th:text="${errorMsg}"></span>
-<form th:action="@{/login}" method="post"th:object="${loginForm}">
+
+<form th:action="@{/signup}" method="post"th:object="${signupForm}">
 	<div>
 		<label>LoginId</label>
 		<input type="text"th:field="*{loginId}">
@@ -17,11 +18,10 @@
 			<input type="password" th:field="*{password}">
 	</div>
 	<div>
-		<input type="submit" value="LOGIN">
+		<input type="submit" value="SignupHere">
 	</div>
-</form>
-<a th:href="@{/signup}">UserSignup</a>
-</div>
+
+
 </form>
 </body>
 </html>
