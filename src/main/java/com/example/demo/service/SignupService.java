@@ -24,4 +24,12 @@ public class SignupService {
 
 		return repository.save(userInfo);
 	}
+	public UserInfo changePassword(String loginId, String newPassword) {
+		var optionalUser = repository.findByLoginId(loginId);
+		
+		var user = optionalUser.get();
+		user.setPassword(newPassword);
+		
+		return repository.save(user);
+	}
 }

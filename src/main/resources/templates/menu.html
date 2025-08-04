@@ -5,6 +5,13 @@
 <title>Top menu</title>
 </head>
 <body>
-Here is top menu
+	
+<h2>Welcome</h2>
+<a href="/ChangePassword" target="_blank">Change Password here</a>
+<form th:action="@{/delete}" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <input type="hidden" name="loginId" value="sampleUser" />
+    <button type="submit">Delete my account</button>
+</form>
 </body>
 </html>

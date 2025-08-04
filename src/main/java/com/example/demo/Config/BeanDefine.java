@@ -11,5 +11,5 @@ public class BeanDefine{
  Mapper mapper() {
 	 return new DozerBeanMapper();
  }
-	
+
 }
