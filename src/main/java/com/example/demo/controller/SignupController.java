@@ -14,17 +14,16 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor 
 public class SignupController {
-	
 	private final SignupService service;
-	
-	
-    @GetMapping("/signup")
+
+	@GetMapping("/signup")
     public String view(Model model, SignupForm form) {
         return "signup";
     }
 
     @PostMapping("/signup")
-    public void signup(Model model, SignupForm form) {
-       var userInfo = service.resistUserInfo(form);
+    public String signup(Model model, SignupForm form) {
+        service.resistUserInfo(form);
+        return "redirect:/login";
     }
 }

@@ -41,7 +41,7 @@ public class LoginController{
 		var isCorrectUserAuth = userInfo.isPresent()
 				&& form.getPassword().equals(userInfo.get().getPassword());
 		if(isCorrectUserAuth) {
-			return "redirect:/menu";
+			return "redirect:/menu/" + form.getLoginId();
 		}else {
 			var errorMsg = AppUtil.getMessage(messageSource, "login.wrongInput");
 			model.addAttribute("errorMsg", "login id or password is not correct");

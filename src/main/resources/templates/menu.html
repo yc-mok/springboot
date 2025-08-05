@@ -6,11 +6,12 @@
 </head>
 <body>
 	
-<h2>Welcome</h2>
-<a href="/ChangePassword" target="_blank">Change Password here</a>
+<h2>Welcome [[${loginId}]]</h2>
+
+<a th:href="@{/ChangePassword/{loginId}(loginId=${loginId})}"  target="_blank">Change Password here</a>
 <form th:action="@{/delete}" method="post">
     <input type="hidden" name="_method" value="delete" />
-    <input type="hidden" name="loginId" value="sampleUser" />
+    <input type="hidden" name="loginId" th:value="${loginId}" />
     <button type="submit">Delete my account</button>
 </form>
 </body>

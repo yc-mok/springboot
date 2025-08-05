@@ -20,9 +20,9 @@ public class SignupService {
 	
 	
 	public UserInfo resistUserInfo(SignupForm form){
-		var userInfo = mapper.map(form, UserInfo.class);
+		var user = mapper.map(form, UserInfo.class);
 
-		return repository.save(userInfo);
+		return repository.save(user);
 	}
 	public UserInfo changePassword(String loginId, String newPassword) {
 		var optionalUser = repository.findByLoginId(loginId);
